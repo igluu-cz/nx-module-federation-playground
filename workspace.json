@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "projects": {
+    "demo-api": "apps/demo-api",
+    "main-app": "apps/main-app",
+    "orders-app": "apps/orders-app",
+    "payments-app": "apps/payments-app"
+  }
+}

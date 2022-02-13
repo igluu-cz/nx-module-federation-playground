@@ -1,0 +1,74 @@
+{
+  "root": "apps/orders-app",
+  "sourceRoot": "apps/orders-app/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/orders-app",
+        "index": "apps/orders-app/src/index.html",
+        "baseHref": "/",
+        "main": "apps/orders-app/src/main.tsx",
+        "polyfills": "apps/orders-app/src/polyfills.ts",
+        "tsConfig": "apps/orders-app/tsconfig.app.json",
+        "assets": [
+          "apps/orders-app/src/favicon.ico",
+          "apps/orders-app/src/assets"
+        ],
+        "styles": [],
+        "scripts": [],
+        "webpackConfig": "apps/orders-app/webpack.config.js"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/orders-app/src/environments/environment.ts",
+              "with": "apps/orders-app/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "orders-app:build",
+        "hmr": true,
+        "port": 4202
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "orders-app:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/orders-app/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/orders-app"],
+      "options": {
+        "jestConfig": "apps/orders-app/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
