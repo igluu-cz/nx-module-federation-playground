@@ -8,8 +8,10 @@ const StyledApp = styled.div`
   // Your style here
 `;
 
-// @ts-ignore
-const PaymentsPage = React.lazy(() => import('payments_app/PaymentsPage'));
+const ListingMaintenancePage = React.lazy(
+  // @ts-ignore
+  () => import('listing_maintenance_app/ListingMaintenancePage')
+);
 // @ts-ignore
 const OrdersPage = React.lazy(() => import('orders_app/OrdersPage'));
 
@@ -19,7 +21,10 @@ export function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path="/payments" element={<PaymentsPage />} />
+          <Route
+            path="/listing-maintenance"
+            element={<ListingMaintenancePage />}
+          />
           <Route path="/orders" element={<OrdersPage />} />
         </Route>
       </Routes>

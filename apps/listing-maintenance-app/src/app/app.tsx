@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import PaymentsPage from './pages/PaymentsPage';
+import PaymentsPage from './pages/ListingMaintenancePage';
 
 const StyledApp = styled.div`
   // Your style here

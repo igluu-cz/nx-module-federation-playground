@@ -6,7 +6,8 @@ module.exports = (config, context) => {
     new ModuleFederationPlugin({
       name: 'main_app',
       remotes: {
-        payments_app: 'payments_app@//localhost:4201/remoteEntry.js',
+        listing_maintenance_app:
+          'listing_maintenance_app@//localhost:4201/remoteEntry.js',
         orders_app: 'orders_app@//localhost:4202/remoteEntry.js',
       },
       shared: {

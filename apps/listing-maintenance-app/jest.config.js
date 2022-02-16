@@ -1,10 +1,10 @@
 module.exports = {
-  displayName: 'payments-app',
+  displayName: 'listing-maintenance-app',
   preset: '../../jest.preset.js',
   transform: {
     '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': '@nrwl/react/plugins/jest',
     '^.+\\.[tj]sx?$': 'babel-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/apps/payments-app',
+  coverageDirectory: '../../coverage/apps/listing-maintenance-app',
 };

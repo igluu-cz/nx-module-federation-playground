@@ -6,10 +6,11 @@ module.exports = (config, context) => {
   config.optimization.runtimeChunk = false; // this part is important - not going to work without it
   config.plugins.push(
     new ModuleFederationPlugin({
-      name: 'payments_app',
+      name: 'listing_maintenance_app',
       filename: 'remoteEntry.js',
       exposes: {
-        './PaymentsPage': 'apps/payments-app/src/app/pages/PaymentsPage',
+        './ListingMaintenancePage':
+          'apps/listing-maintenance-app/src/app/pages/ListingMaintenancePage',
       },
       shared: {
         // shared libraries - please check possible settings.
@@ -33,7 +34,7 @@ module.exports = (config, context) => {
   );
   config.output.publicPath = 'auto';
   config.output.clean = true;
-  config.output.uniqueName = 'payments_app';
+  config.output.uniqueName = 'listing-maintenance-app';
 
   return config;
 };

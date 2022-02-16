@@ -1,9 +1,10 @@
 {
   "version": 2,
   "projects": {
+    "chockablock-ui": "libs/chockablock-ui",
     "demo-api": "apps/demo-api",
     "main-app": "apps/main-app",
     "orders-app": "apps/orders-app",
-    "payments-app": "apps/payments-app"
+    "listing-maintenance-app": "apps/listing-maintenance-app"
   }
 }

@@ -1,6 +1,6 @@
 {
-  "root": "apps/payments-app",
-  "sourceRoot": "apps/payments-app/src",
+  "root": "apps/listing-maintenance-app",
+  "sourceRoot": "apps/listing-maintenance-app/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -9,26 +9,26 @@
       "defaultConfiguration": "production",
       "options": {
         "compiler": "babel",
-        "outputPath": "dist/apps/payments-app",
-        "index": "apps/payments-app/src/index.html",
+        "outputPath": "dist/apps/listing-maintenance-app",
+        "index": "apps/listing-maintenance-app/src/index.html",
         "baseHref": "/",
-        "main": "apps/payments-app/src/main.tsx",
-        "polyfills": "apps/payments-app/src/polyfills.ts",
-        "tsConfig": "apps/payments-app/tsconfig.app.json",
+        "main": "apps/listing-maintenance-app/src/main.tsx",
+        "polyfills": "apps/listing-maintenance-app/src/polyfills.ts",
+        "tsConfig": "apps/listing-maintenance-app/tsconfig.app.json",
         "assets": [
-          "apps/payments-app/src/favicon.ico",
-          "apps/payments-app/src/assets"
+          "apps/listing-maintenance-app/src/favicon.ico",
+          "apps/listing-maintenance-app/src/assets"
         ],
         "styles": [],
         "scripts": [],
-        "webpackConfig": "apps/payments-app/webpack.config.js"
+        "webpackConfig": "apps/listing-maintenance-app/webpack.config.js"
       },
       "configurations": {
         "production": {
           "fileReplacements": [
             {
-              "replace": "apps/payments-app/src/environments/environment.ts",
-              "with": "apps/payments-app/src/environments/environment.prod.ts"
+              "replace": "apps/listing-maintenance-app/src/environments/environment.ts",
+              "with": "apps/listing-maintenance-app/src/environments/environment.prod.ts"
             }
           ],
           "optimization": true,
@@ -43,14 +43,14 @@
     "serve": {
       "executor": "@nrwl/web:dev-server",
       "options": {
-        "buildTarget": "payments-app:build",
+        "buildTarget": "listing-maintenance-app:build",
         "hmr": true,
         "port": 4201,
         "liveReload": true
       },
       "configurations": {
         "production": {
-          "buildTarget": "payments-app:build:production",
+          "buildTarget": "listing-maintenance-app:build:production",
           "hmr": false
         }
       }
@@ -59,14 +59,14 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/payments-app/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["apps/listing-maintenance-app/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/payments-app"],
+      "outputs": ["coverage/apps/listing-maintenance-app"],
       "options": {
-        "jestConfig": "apps/payments-app/jest.config.js",
+        "jestConfig": "apps/listing-maintenance-app/jest.config.js",
         "passWithNoTests": true
       }
     }
